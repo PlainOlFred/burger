@@ -6,7 +6,6 @@ const router = express.Router();
 
 router
 .route('/') 
-
   .get( (req, res) => {
     burger.selectAll((data) => {
       let burgers = {
