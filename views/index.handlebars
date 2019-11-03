@@ -22,7 +22,7 @@
     {{!-- Burger Display --}}
     <div class="col-md-4">
       <ul>
-        {{#each burges}}
+        {{#each burgers}}
           {{#unless devour}}
             <li>
               {{burger_name}}
@@ -30,18 +30,17 @@
             </li>
           {{/unless}}
         {{/each}}
-            
-            
-
-
-
-      
-
-
       </ul>
     </div>
     <div class="col-md-4">
       <ul>
+        {{#each burgers}}
+          {{#if devour}}
+            <li>
+              {{burger_name}}
+            </li>
+          {{/if}}
+        {{/each}}
         
       </ul>
     </div>
@@ -50,7 +49,7 @@
   <div class="row justify-content-md-center">
     <div class="col-md-4">
       {{!-- Form: Text Box and Button  --}}
-      <form action="/" id="burger-form">
+      <form id="burger-form">
         <div class="brugerForm">
           <input type="text" class="burgeForm" id="burger-input">
           <button type="submit" class="btn btn-primary">Add</button>
@@ -63,6 +62,8 @@
   <div class="row justify-content-md-center">
     <div class="col-md-4">
       {{!-- Instructions--}}
+     
+        
 
     </div>
   </div>
