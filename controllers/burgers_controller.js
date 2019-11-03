@@ -14,7 +14,7 @@ router
       };
       
       console.log(burgers);
-      res.render('index', burgers)
+      res.render('index', burgers).end();
     });
   })
 
