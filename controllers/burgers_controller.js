@@ -25,8 +25,7 @@ router
       req.body.burger_name, req.body.devoured
 
     ], (result) => {
-      res.status(200)
-
+      res.status(200).end();
     })
 
   })
