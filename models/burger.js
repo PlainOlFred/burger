@@ -8,18 +8,18 @@ const burger = {
       cb(res)
     });
 
-  },
-  insertOne: function(vals, cb) {
-    orm.insertOne(vals, function(res){
-      cb(res);
-    });
-
-  },
-  updateOne: function() {
-    orm.updateOne(val, devour, cd, function(res) {
-      cd(res);
-    });
   }
+  // insertOne: function(vals, cb) {
+  //   orm.insertOne(vals, function(res){
+  //     cb(res);
+  //   });
+
+  // },
+  // updateOne: function() {
+  //   orm.updateOne(val, devour, cd, function(res) {
+  //     cd(res);
+  //   });
+  // }
 };
 
 
