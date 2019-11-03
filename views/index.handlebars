@@ -22,6 +22,19 @@
     {{!-- Burger Display --}}
     <div class="col-md-4">
       <ul>
+        {{#each burges}}
+          {{#unless devour}}
+            <li>
+              {{burger_name}}
+              <button data-id="{{id}}">Devour</button>
+            </li>
+          {{/unless}}
+        {{/each}}
+            
+            
+
+
+
       
 
 
