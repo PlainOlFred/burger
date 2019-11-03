@@ -27,11 +27,26 @@ router
 //       })
 
 //   })
+router
+.route('api/burgers/:id')
+  .put( (req, res) => {
+    let condition = `id = ${req.params.id}`
 
-//   .put( (req, res) => {
-//     burger.updateOne()
+    burger.updateOne(
+    //   {
+    //   devoured: req.body.devoured,
+    // }
+     condition, (result) => {
 
-//   })
+      if (result.changedRows == 0) {
+        return res.status(404).end();
+      } else {
+        res.status(200).end();
+      }
+
+    })
+
+  })
   
   
 
