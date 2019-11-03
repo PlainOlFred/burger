@@ -22,10 +22,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     {{!-- External Javascript --}}
 
-    {{!-- <script>
-      //handlers
+    <script>
+      /*handlers*/
       $(document).ready(function () {
-        
+        /*Create Burger*/
+        /*
         $(".burger-form").on("submit", function(event) {
           event.preventDefault();
           console.log('btn')
@@ -42,8 +43,29 @@
             }
           );
         });
+        */
 
-      }); --}}
+        /*Devour Burger*/
+        $('.devour-burger-btn').on('click', function() {
+        
+          let 
+            id = $(this).data('id'),
+            devoured = $(this).data('devoured');
+
+          console.log(id, devoured)
+
+          $.ajax(`api/burgers/${id}`, {
+            type: 'PUT',
+            data: {devoured: true}
+          }).then(
+            function() {
+              console.log('devoured')
+              location.reload();
+            }
+          );
+        });
+
+      }); 
         
     </script>
 
