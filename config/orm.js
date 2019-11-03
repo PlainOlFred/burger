@@ -13,14 +13,15 @@ const orm = {
     })
 
   },
-  insertOne: function(table, cols, vals, cb) {
+  insertOne: function(vals, cb) {
     let 
-      query = `INSERT INTO burgers (${cols.toString()})`;
-      query += `VALUES ([?, ?])`
-      console.log('query: '+query);
+      query = `INSERT INTO burgers (burger_name) `;
+      query += `VALUES (?)`;
+
+      console.log('query: '+ query);
 
 
-    connection.query(query, (err, result) => {
+    connection.query(query, vals, (err, result) => {
       if (err) throw err;
 
       cb(result);
@@ -38,7 +39,6 @@ const orm = {
 
     })
 
-    
 
   }
 
