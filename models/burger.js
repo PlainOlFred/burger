@@ -1,3 +1,5 @@
+// relates to the database 
+// commicates with the controller
 const orm = require('..config/orm.js');
 
 const burger = {
