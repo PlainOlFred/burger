@@ -8,31 +8,31 @@ router
 .route('/') 
 
   .get( (req, res) => {
-    burger.selectAll( (data) => {
+    burger.selectAll((data) => {
       let burgers = {
         burgers: data
       };
       
       console.log(burgers);
-      res.render('index', burgers).end();
+      res.render("index", burgers);
     });
   })
 
-router
-.route('/api/burgers')
-  .post( (req, res) => {
-    burger.insertOne( 
-      [req.body.burger_name], 
-      () => {
-        res.status(200).end();
-      })
+// router
+// .route('/api/burgers')
+//   .post( (req, res) => {
+//     burger.insertOne( 
+//       [req.body.burger_name], 
+//       () => {
+//         res.status(200).end();
+//       })
 
-  })
+//   })
 
-  .put( (req, res) => {
-    burger.updateOne()
+//   .put( (req, res) => {
+//     burger.updateOne()
 
-  })
+//   })
   
   
 
