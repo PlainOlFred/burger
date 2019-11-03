@@ -25,19 +25,18 @@
     <script>
       //handlers
       $(document).ready(function () {
+        
         $(".burger-form").on("submit", function(event) {
           event.preventDefault();
-
-          var newBurger = {
+          console.log('btn')
+          let newBurger = {
             burger_name: $("#burger-input").val().trim(),
-            
           };
 
-          $.ajax('/', {
+          $.ajax('/api/burgers', {
             type: "POST",
             data: newBurger
-          }).then(
-            function() {
+          }).then(function() {
               console.log("created new Burger");
               location.reload();
             }
