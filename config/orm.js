@@ -12,7 +12,7 @@ const orm = {
       cb(result);
     })
 
-  }
+  },
   // insertOne: function(vals, cb) {
   //   let 
   //     query = `INSERT INTO burgers (burger_name) `;
@@ -29,21 +29,19 @@ const orm = {
 
 
   // },
-  // updateOne: function(table, cb) {
-  //   let query = `UPDATE ${table} SET `;
+  updateOne: function(condition, cb) {
+    let 
+      query = `UPDATE burgers SET devoured `;
+      query += `WHERE ${condition}`;
 
-  //   connection.query(query, (err, result) => {
-  //     if (err) throw err;
+    connection.query(query, (err, result) => {
+      if (err) throw err;
 
-  //     cb(result)
+      cb(result)
 
-  //   })
-
-
-  }
-
-    
-
+    });
+  }   
+}
   
 
 
