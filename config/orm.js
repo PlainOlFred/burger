@@ -12,38 +12,38 @@ const orm = {
       cb(result);
     })
 
-  },
-  insertOne: function(vals, cb) {
-    let 
-      query = `INSERT INTO burgers (burger_name) `;
-      query += `VALUES (?)`;
+  }
+  // insertOne: function(vals, cb) {
+  //   let 
+  //     query = `INSERT INTO burgers (burger_name) `;
+  //     query += `VALUES (?)`;
 
-      console.log('query: '+ query);
-
-
-    connection.query(query, vals, (err, result) => {
-      if (err) throw err;
-
-      cb(result);
-    });
+  //     console.log('query: '+ query);
 
 
-  },
-  updateOne: function(table, cb) {
-    let query = `UPDATE ${table} SET `;
+  //   connection.query(query, vals, (err, result) => {
+  //     if (err) throw err;
 
-    connection.query(query, (err, result) => {
-      if (err) throw err;
+  //     cb(result);
+  //   });
 
-      cb(result)
 
-    })
+  // },
+  // updateOne: function(table, cb) {
+  //   let query = `UPDATE ${table} SET `;
+
+  //   connection.query(query, (err, result) => {
+  //     if (err) throw err;
+
+  //     cb(result)
+
+  //   })
 
 
   }
 
     
-}
+
   
 
 
