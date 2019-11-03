@@ -18,15 +18,14 @@ router
     });
   })
 
+router
+.route('/api/burgers')
   .post( (req, res) => {
-    burger.insertOne([
-      'burger_name', 'devoured'
-    ], [
-      req.body.burger_name, req.body.devoured
-
-    ], (result) => {
-      res.status(200).end();
-    })
+    burger.insertOne( 
+      [req.body.burger_name], 
+      () => {
+        res.status(200).end();
+      })
 
   })
 
