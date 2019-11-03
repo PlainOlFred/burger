@@ -1,6 +1,6 @@
 // relates to the database 
 // commicates with the controller
-const orm = require('..config/orm.js');
+const orm = require('../config/orm');
 
 const burger = {
   selectAll: function(cb) {
@@ -12,7 +12,6 @@ const burger = {
   insertOne: function(col, val, cb) {
     orm.insertOne('burgers', col, val, function(res){
       cb(res);
-
     });
 
   },
@@ -23,4 +22,8 @@ const burger = {
   }
 };
 
+
+
+
 module.exports = burger;
+
