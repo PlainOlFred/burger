@@ -4,7 +4,7 @@ const connection = require('./connection');
 
 const orm = {
    selectAll: function(table, cb) {
-    let query = `SELECT burger_name, devoured FROM ${table};`;
+    let query = `SELECT burger_name, id, devoured FROM ${table};`;
 
     connection.query(query, (err, result) => {
       if (err) throw err;
@@ -29,8 +29,7 @@ const orm = {
   },
   updateOne: function(table, condition, cb) {
     let 
-      query = `UPDATE burgers SET devoured`;
-      query += `= ? `
+      query = `UPDATE ${table} SET devoured = ${true} `;
       query += `WHERE ${condition}`;
 
     connection.query(query, (err, result) => {
