@@ -34,18 +34,14 @@ router
 .route('/api/burgers/:id')
   .put( (req, res) => {
     let condition = `id = ${req.params.id}`
-    console.log(req.params.id)
     
-
     burger.updateOne(
      condition, 
      (result) => {
-      if (result.changedRows === 0) {
-        return res.status(404).end();
-      } else {
+       console.log(result)
+     
         res.status(200).end();
-      }
-
+    
     })
 
   })
