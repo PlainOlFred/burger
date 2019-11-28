@@ -1,4 +1,4 @@
-// relates to the database 
+// relates to the database ORM
 // commicates with the controller
 const orm = require('../config/orm');
 
@@ -9,15 +9,15 @@ const burger = {
     });
 
   },
-  // insertOne: function(vals, cb) {
-  //   orm.insertOne(vals, function(res){
-  //     cb(res);
-  //   });
+  insertOne: function(burger_name, cb) {
+    orm.insertOne('burgers',[burger_name, false], function(res){
+      cb(res);
+    });
 
-  // },
+  },
   updateOne: function(condition, cb) {
     orm.updateOne(condition, function(res) {
-      cd(res);
+      cb(res);
     });
   }
 };
