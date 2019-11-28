@@ -23,10 +23,10 @@
     <div class="col-md-4">
       <ul>
         {{#each burgers}}
-          {{#unless devour}}
+          {{#unless this.devoured}}
             <li>
               {{burger_name}}
-              <button class="devour-burger-btn" data-id={{id}} data-devoured={{devoured}}>Devour</button>
+              <button class="devour-burger-btn" data-id={{this.id}} data-devoured={{this.devoured}}>{{this.id}}Devour{{this.devoured}}</button>
             </li>
           {{/unless}}
         {{/each}}
@@ -35,7 +35,7 @@
     <div class="col-md-4">
       <ul>
         {{#each burgers}}
-          {{#if devour}}
+          {{#if this.devoured}}
             <li>
               {{burger_name}}
             </li>
@@ -51,7 +51,7 @@
       {{!-- Form: Text Box and Button  --}}
       <form action="/api/burgers/create" method="POST" id="burger-form">
         <div class="brugerForm">
-          <input type="text" class="burgeForm" id="burger_input">
+          <input type="text" class="burgeForm" name="burger_input" id="burger_input">
           <button type="submit" class="btn btn-primary">Add</button>
         </div>
       </form>
