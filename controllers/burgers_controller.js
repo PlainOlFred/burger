@@ -15,30 +15,32 @@ router
       console.log(burgers);
       res.render("index", burgers);
     });
-  })
+  });
 
-// router
-// .route('/api/burgers')
-//   .post( (req, res) => {
-//     burger.insertOne( 
-//       [req.body.burger_name], 
-//       () => {
-//         res.status(200).end();
-//       })
-
-//   })
 router
-.route('api/burgers/:id')
+.route('/api/burgers/create')
+  .post( (req, res) => {
+    //  console.log(`RESQUEST BODY: ${req.body.burger_input}`)
+    burger.insertOne( 
+      req.body.burger_input, 
+      (result) => {
+        console.log('post: ' + result)
+        res.redirect('/');
+      })
+
+  });
+
+router
+.route('/api/burgers/:id')
   .put( (req, res) => {
     let condition = `id = ${req.params.id}`
+    console.log(req.params.id)
+    
 
     burger.updateOne(
-    //   {
-    //   devoured: req.body.devoured,
-    // }
-     condition, (result) => {
-
-      if (result.changedRows == 0) {
+     condition, 
+     (result) => {
+      if (result.changedRows === 0) {
         return res.status(404).end();
       } else {
         res.status(200).end();
