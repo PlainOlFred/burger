@@ -3,19 +3,14 @@ const mysql = require('mysql');
 
 
 if(process.env.JAWSBD_URL) {
-  connection = mysql.createConnection({
-    host: 'process.env.DB_HOST',
-    port: 3306,
-    user: 'process.env.DB_USER',
-    password: 'process.env.DB_PASS',
-    database: 'process.env.DB_DB'});
+  connection = mysql.createConnection(process.env.JAWSBD_URL);
 } else {
   connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: 'password',
-    database: 'burger_db'
+  host: 'localhost',
+  port: 3306,
+  user: 'root',
+  password: 'password',
+  database: 'burger_db'
 });
 }
 
