@@ -3,7 +3,14 @@ const mysql = require('mysql');
 
 
 if(process.env.JAWSBD_URL) {
-  connection = mysql.createConnection(process.env.jaws_db);
+  // connection = mysql.createConnection(process.env.JAWSDB_URL),
+  connection = mysql.createConnection({
+  host: process.env.JAWSDB_URL,
+  port: 3306,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_DB
+  });
 } else {
   connection = mysql.createConnection({
   host: 'localhost',
