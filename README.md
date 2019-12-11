@@ -1,4 +1,4 @@
-# burger
+# Eat-Da-Burger
 >An App for creating, saving, devouring your favorite burgers.
 
 ## MVP
