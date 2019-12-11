@@ -20,6 +20,10 @@
     - [X] Route to create burger
     - [X] Route to update(devour)
   - [X] Hosted to heroku
+  
+## Developmental Feature
+  - [ ] Allow burger to be undevoured
+  - [ ] Front-end decorations with burger theme
 
 ## Technoology Used
   - [Express](https://www.npmjs.com/package/express)
